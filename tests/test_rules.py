@@ -30,6 +30,9 @@ def test_lunes_cerrado() -> None:
     ("a", "b", "esperado"),
     [
         (time(21, 0), time(21, 0), True),
+        (time(20, 0), time(21, 0), True),
+        (time(21, 0), time(22, 0), True),
+        (time(20, 0), time(21, 30), False),
         (time(13, 0), time(20, 0), False),
     ],
 )

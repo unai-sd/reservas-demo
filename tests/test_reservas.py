@@ -22,6 +22,15 @@ def test_sin_mesas_libres(client: TestClient, mesas: list[dict]) -> None:
     assert client.post("/reservas", json=reserva(comensales=6)).status_code == 409
 
 
+def test_reservas_solapadas_no_comparten_mesa(client: TestClient, mesas: list[dict]) -> None:
+    primera = client.post("/reservas", json=reserva(mesa_id=mesas[0]["id"], hora="21:00:00"))
+    assert primera.status_code == 201
+    solapada = client.post("/reservas", json=reserva(mesa_id=mesas[0]["id"], hora="21:30:00"))
+    assert solapada.status_code == 409
+    libre = client.post("/reservas", json=reserva(mesa_id=mesas[0]["id"], hora="22:30:00"))
+    assert libre.status_code == 201
+
+
 def test_regla_incumplida(client: TestClient, mesas: list[dict]) -> None:
     respuesta = client.post("/reservas", json=reserva(fecha="2026-09-07"))
     assert respuesta.status_code == 422
