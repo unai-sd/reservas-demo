@@ -30,9 +30,13 @@ def franjas_del_dia(fecha: date) -> list[time]:
     return franjas
 
 
+def _minutos(hora: time) -> int:
+    return hora.hour * 60 + hora.minute
+
+
 def se_solapan(hora_a: time, hora_b: time) -> bool:
-    """Two bookings on the same table overlap if they start at the same time."""
-    return hora_a == hora_b
+    """Two bookings on the same table overlap if they start less than one booking apart."""
+    return abs(_minutos(hora_a) - _minutos(hora_b)) < DURACION_RESERVA_MINUTOS
 
 
 def validar_nueva_reserva(fecha: date, hora: time, ahora: datetime) -> None:
