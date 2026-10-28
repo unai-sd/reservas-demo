@@ -39,3 +39,8 @@ class ReservaOut(BaseModel):
     hora: time
     estado: str
     creada_en: datetime
+
+
+class Franja(BaseModel):
+    hora: time
+    mesas_libres: int
