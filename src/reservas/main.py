@@ -7,7 +7,7 @@ from fastapi import FastAPI
 
 from reservas import __version__
 from reservas.db import init_db
-from reservas.routers import mesas, reservas
+from reservas.routers import franjas, mesas, reservas
 
 
 @asynccontextmanager
@@ -19,6 +19,7 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
 app = FastAPI(title="Reservas Casa Demo", version=__version__, lifespan=lifespan)
 app.include_router(mesas.router)
 app.include_router(reservas.router)
+app.include_router(franjas.router)
 
 
 @app.get("/salud", tags=["sistema"])

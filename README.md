@@ -51,6 +51,7 @@ Definidas en `src/reservas/rules.py`:
 | GET, POST | `/mesas` | Listar y crear mesas |
 | GET | `/mesas/{id}` | Detalle de una mesa |
 | POST | `/mesas/{id}/desactivar` | Retirar una mesa de la sala |
+| GET | `/franjas?fecha=&comensales=` | Franjas del día con mesas libres |
 | GET, POST | `/reservas` | Listar (filtro `fecha`) y crear reservas |
 | GET | `/reservas/{id}` | Detalle de una reserva |
 | POST | `/reservas/{id}/cancelar` | Cancelar una reserva |
