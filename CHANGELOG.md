@@ -3,7 +3,7 @@
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/);
 versiones según [SemVer](https://semver.org/lang/es/).
 
-## [Sin publicar]
+## [1.1.0] - sin publicar
 
 ### Añadido
 - `GET /franjas`: franjas del día con el número de mesas libres para un grupo.
