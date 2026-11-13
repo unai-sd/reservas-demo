@@ -55,6 +55,7 @@ Definidas en `src/reservas/rules.py`:
 | GET, POST | `/reservas` | Listar (filtro `fecha`) y crear reservas |
 | GET | `/reservas/{id}` | Detalle de una reserva |
 | POST | `/reservas/{id}/cancelar` | Cancelar una reserva |
+| GET | `/resumen?fecha=` | Resumen del día para cocina |
 
 ## Estructura
 
