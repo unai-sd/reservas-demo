@@ -7,6 +7,7 @@ versiones según [SemVer](https://semver.org/lang/es/).
 
 ### Añadido
 - `GET /franjas`: franjas del día con el número de mesas libres para un grupo.
+- `GET /resumen`: resumen diario de reservas y comensales por servicio para cocina.
 
 ## [1.0.1] - 2026-10-21
 
